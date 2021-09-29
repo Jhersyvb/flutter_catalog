@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/models/catalog.dart';
-import 'package:flutter_catalog/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'catalog_image.dart';
@@ -24,7 +23,7 @@ class CatalogItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                catalog.name.text.lg.color(MyTheme.darkBluishColor).bold.make(),
+                catalog.name.text.lg.bold.make(),
                 catalog.desc.text.caption(context).make(),
                 10.heightBox,
                 ButtonBar(
@@ -35,9 +34,6 @@ class CatalogItem extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {},
                       style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(
-                          MyTheme.darkBluishColor,
-                        ),
                         shape: MaterialStateProperty.all(
                           StadiumBorder(),
                         ),
@@ -51,6 +47,6 @@ class CatalogItem extends StatelessWidget {
           ),
         ],
       ),
-    ).white.rounded.square(150).make().py16();
+    ).color(context.theme.cardColor).rounded.square(150).make().py16();
   }
 }
